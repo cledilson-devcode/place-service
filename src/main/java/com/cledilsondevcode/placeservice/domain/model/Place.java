@@ -10,17 +10,17 @@ public class Place {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String name;
+    private String name;
 
-    String slug;
+    private String slug;
 
-    String state;
+    private String state;
 
-    LocalDateTime createdAt;
+    private LocalDateTime createdAt;
 
-    LocalDateTime updatedAt;
+    private LocalDateTime updatedAt;
 
     public Long getId() {
         return id;
