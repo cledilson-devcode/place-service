@@ -1,5 +1,6 @@
 package com.cledilsondevcode.placeservice.infrastructure.repository;
 
+import com.cledilsondevcode.placeservice.api.PlaceRequest;
 import com.cledilsondevcode.placeservice.domain.model.Place;
 import com.cledilsondevcode.placeservice.domain.repository.PlaceRepository;
 import jakarta.persistence.EntityManager;
@@ -31,7 +32,8 @@ public class PlaceRepositoryImpl implements PlaceRepository {
 
     @Transactional
     @Override
-    public Place save(Place place) {
+    public Place save(PlaceRequest placeRequest) {
+        Place place = new Place(null, placeRequest.getName(), placeRequest.getSlug(), placeRequest.getState(), placeRequest.getCreatedAt(),placeRequest.getUpdatedAt());
         return manager.merge(place);
     }
 

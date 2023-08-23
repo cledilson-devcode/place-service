@@ -1,5 +1,7 @@
 package com.cledilsondevcode.placeservice.web;
 
+import com.cledilsondevcode.placeservice.api.PlaceRequest;
+import com.cledilsondevcode.placeservice.api.PlaceResponse;
 import com.cledilsondevcode.placeservice.domain.model.Place;
 import com.cledilsondevcode.placeservice.domain.repository.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,11 @@ public class PlaceController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Place created(@RequestBody Place place){
+    public PlaceResponse created(@RequestBody PlaceRequest request){
 
-        return placeRepository.save(place);
+
+
+        return placeRepository.save(request);
 
     }
 

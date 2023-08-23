@@ -22,6 +22,15 @@ public class Place {
 
     private LocalDateTime updatedAt;
 
+    public Place(Long id, String name, String slug, String state, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.name = name;
+        this.slug = slug;
+        this.state = state;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
     public Long getId() {
         return id;
     }
